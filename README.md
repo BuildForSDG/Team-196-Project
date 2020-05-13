@@ -6,6 +6,6 @@
 
 Team Members Include :
 
-1. [Daniel Dennis](https://github.com/katungi)
-2. [Daniel Shotonwa](https://github.com/Danielshow)
-3. [Simon Wathigo](https://github.com/wathigo)
+- [Daniel Dennis](https://github.com/katungi)
+- [Daniel Shotonwa](https://github.com/Danielshow)
+- [Simon Wathigo](https://github.com/wathigo)
