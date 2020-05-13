@@ -11,5 +11,5 @@ Team Members Include :
 
 - Daniel Dennis
 - Simon Wathigo
-- Daniel Showatola
+- Daniel Showatonwa
 
