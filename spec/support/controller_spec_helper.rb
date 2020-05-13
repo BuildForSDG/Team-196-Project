@@ -22,3 +22,4 @@ module ControllerSpecHelper
       }
     end
   end
+  

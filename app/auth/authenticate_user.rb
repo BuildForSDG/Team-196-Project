@@ -21,3 +21,4 @@ class AuthenticateUser
       raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
     end
   end
+  
