@@ -3,3 +3,4 @@ module Response
       render json: object, status: status
     end
 end
+

@@ -70,3 +70,4 @@ RSpec.describe AuthorizeApiRequest do
     end
   end
 end
+

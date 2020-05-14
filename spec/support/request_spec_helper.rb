@@ -4,3 +4,4 @@ module RequestSpecHelper
       JSON.parse(response.body)
     end
 end
+

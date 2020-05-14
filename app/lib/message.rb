@@ -31,3 +31,4 @@ class Message
       'Sorry, your token has expired. Please login to continue.'
     end
 end
+

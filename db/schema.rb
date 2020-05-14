@@ -37,4 +37,6 @@ ActiveRecord::Schema.define(version: 2020_05_14_053837) do
   end
 
   add_foreign_key "records", "users"
-end
+end 
+
+

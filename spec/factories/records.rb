@@ -6,3 +6,4 @@ FactoryBot.define do
         diagnosis { true }
     end
 end
+

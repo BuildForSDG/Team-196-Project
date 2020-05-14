@@ -12,3 +12,4 @@ class AuthenticationController < ApplicationController
         params.permit(:email, :password, :authentication)
       end
 end
+
