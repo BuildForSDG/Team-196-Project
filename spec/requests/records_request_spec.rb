@@ -57,9 +57,9 @@ RSpec.describe "Records", type: :request do
             end
 
             it 'returns a not found message' do
-                expect(response.body).to match(/Couldn't find record/)
+                expect(response.body).to match(/Couldn't find Record/)
             end
-        end
+        end 
     end 
 
     # Test suite for put /users/:user_id/records 
@@ -95,7 +95,7 @@ RSpec.describe "Records", type: :request do
         let(:valid_attributes) {{ description: 'I have Scritzophrania' }.to_json }
 
         before do
-            put "/users/#{user_id}/records/#{id}", params: valid_attributes 
+            put "/users/#{user_id}/records/#{id}", params: valid_attributes, headers: headers
         end
         context 'when record exists' do
             it 'returns status code 204' do
@@ -116,7 +116,7 @@ RSpec.describe "Records", type: :request do
             end 
 
             it 'returns a not found message' do
-                expect(response.body).to match(/Missing token/)
+                expect(response.body).to match(/Couldn't find Record/)
             end
         end
     end
