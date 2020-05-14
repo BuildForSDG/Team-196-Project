@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
 
     before_action :set_user
     before_action :set_user_record, only: [:show, :update, :destroy ]
-    
+
     def index
         json_response(@user.records)
     end
@@ -28,7 +28,7 @@ class RecordsController < ApplicationController
 
     private 
 
-    def record_params do
+    def record_params 
         params.permit( :user_id, :specialist_id, :description, :diagnosis)
     end
 

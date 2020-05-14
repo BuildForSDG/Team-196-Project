@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  
   post 'signup', to: 'users#create' 
 
-  resource :user, only: [:show, :update, :destroy] do
-    resource :records 
+  resources :users, only: [:show, :update, :destroy] do
+    resources :records
   end
 end

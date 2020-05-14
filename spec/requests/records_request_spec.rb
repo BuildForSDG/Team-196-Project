@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Records", type: :request do
     let!(:user) { create(:user) }
-    let!(:records) { create_list(:records, 20, user_id: user.id) }
+    let!(:records) { create_list(:record, 20, user_id: user.id) }
     let(:user_id) { user.id }
     let(:id){ records.first.id }
 
     # test suite for get /user/:user_id/records
 
-    describe 'GET /user/:user_id/records' do
+    describe 'GET /users/:user_id/records' do
         before { get "/user/#{user_id}/records" }
 
         context 'when records exists' do
@@ -35,8 +35,8 @@ RSpec.describe "Records", type: :request do
     end 
 
     # Test suite for GET /user/:user_id/records/:id 
-    describe '/user/:user_id/records/:id' do
-        before { get "/user/#{user_id}/records/#{id}"}
+    describe '/users/:user_id/records/:id' do
+        before { get "/users/#{user_id}/records/#{id}"}
 
         context 'when user item exists' do
             it 'returns status code 200' do
@@ -61,13 +61,13 @@ RSpec.describe "Records", type: :request do
         end
     end 
 
-    # Test suite for put /user/:user_id/records 
+    # Test suite for put /users/:user_id/records 
 
-    describe 'POST /user/:user_id/records' do
+    describe 'POST /users/:user_id/records' do
         let(:valid_attributes){{ description: 'I have autism', diagnosis: false }}
 
         context 'when request attributes are valid' do
-            before { post "/user/#{user_id}/records", params: valid_attributes }
+            before { post "/users/#{user_id}/records", params: valid_attributes }
 
             it 'returns status code 201' do
                 expect(response).to have_http_status(201)
@@ -75,7 +75,7 @@ RSpec.describe "Records", type: :request do
         end
         
         context 'when an invalid request' do
-            before { post "/user/#{user_id}/records", params: {} }
+            before { post "/users/#{user_id}/records", params: {} }
 
             it 'returns status code 422' do
                 expect(response).to have_http_status(422)
@@ -88,10 +88,10 @@ RSpec.describe "Records", type: :request do
         end
     end
 
-    describe 'PUT /user/:user_id/records/:id' do
+    describe 'PUT /users/:user_id/records/:id' do
         let(:valid_attributes) {{ description: 'I have Scritzophrania' }}
 
-        before { put "/user/#{user_id}/records/#{id}", params: valid_attributes }
+        before { put "/users/#{user_id}/records/#{id}", params: valid_attributes }
 
         context 'when record exists' do
             it 'returns status code 204' do
@@ -100,7 +100,7 @@ RSpec.describe "Records", type: :request do
 
             it 'updates the record' do
                 updated_item =  Record.find(id)
-                expect(updated_item.description).to match(/I have Scritzophrania/)
+                expect(updated_item.description).to match(/I have schritzophrenia/)
             end     
         end
 
@@ -112,13 +112,13 @@ RSpec.describe "Records", type: :request do
             end 
 
             it 'returns a not found message' do
-                expect(response.body).to match(/Couldn't fint record/)
+                expect(response.body).to match(/Couldn't find record/)
             end
         end
     end
 
-    describe 'DELETE /user/:id' do
-        before { delete "/user/#{user_id}/records/#{id}" }
+    describe 'DELETE /users/:id' do
+        before { delete "/users/#{user_id}/records/#{id}" }
 
         it 'returns status code 204' do
             expect(response).to have_http_status(204)
