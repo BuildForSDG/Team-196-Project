@@ -29,7 +29,7 @@ class RecordsController < ApplicationController
     private 
 
     def record_params 
-        params.permit( :user_id, :specialist_id, :description, :diagnosis)
+        params.require(:record).permit( :user_id, :specialist_id, :description, :diagnosis)
     end
 
     def set_user
