@@ -1,7 +1,7 @@
 class CreateRecords < ActiveRecord::Migration[6.0]
   def change
     create_table :records do |t|
-      t.integer :specialist_id
+      t.integer :specialist_id, null: true
       t.text :description
       t.string :diagnosis
       t.string :boolean
