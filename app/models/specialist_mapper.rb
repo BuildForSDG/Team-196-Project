@@ -1,6 +1,8 @@
-class SpecialistMapper < ApplicationRecord
-    belongs_to :specialist, class_name: "User"
-    belongs_to :specialization
+# frozen_string_literal: true
 
-    validates_presence_of :specialist, :specialization
+class SpecialistMapper < ApplicationRecord
+  belongs_to :specialist, class_name: 'User'
+  belongs_to :specialization
+
+  validates_presence_of :specialist, :specialization
 end
