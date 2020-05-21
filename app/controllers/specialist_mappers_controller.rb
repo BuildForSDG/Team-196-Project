@@ -4,7 +4,18 @@ class SpecialistMappersController < ApplicationController
   before_action :set_specialist_mapper, only: %i[show update destroy]
 
   def index
-    json_response(SpecialistMapper.all)
+    @specialist_mappers = SpecialistMapper.paginate(page: params[:page], per_page: 30)
+    render json: {
+      current_page: @specialist_mappers.current_page,
+
+      per_page: @specialist_mappers.per_page,
+
+      total_entries: @specialist_mappers.total_entries,
+      total_pages: @specialist_mappers.total_pages,
+
+      entries: @specialist_mappers
+
+    }
   end
 
   def show

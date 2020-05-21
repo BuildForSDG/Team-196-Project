@@ -20,7 +20,7 @@ RSpec.describe 'SpecialistMappers', type: :request do
       end
 
       it 'returns all specialist_mapper records' do
-        expect(json.size).to eq(20)
+        expect(json['total_entries']).to eq(20)
       end
     end
   end
