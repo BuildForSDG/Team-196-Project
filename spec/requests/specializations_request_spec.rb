@@ -34,7 +34,7 @@ RSpec.describe 'Specializations', type: :request do
         expect(json['id']).to eq(id)
       end
     end
-    
+
     context 'when specialization record does not exist' do
       let(:id) { 0 }
 
@@ -53,7 +53,7 @@ RSpec.describe 'Specializations', type: :request do
 
     context 'when request attributes are valid' do
       before do
-        post "/specializations", params: valid_attributes, headers: headers
+        post '/specializations', params: valid_attributes, headers: headers
       end
 
       it 'returns status code 201' do
@@ -62,7 +62,7 @@ RSpec.describe 'Specializations', type: :request do
     end
 
     context 'when an invalid request' do
-      before { post "/specializations", params: { }, headers: headers }
+      before { post '/specializations', params: {}, headers: headers }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -85,7 +85,7 @@ RSpec.describe 'Specializations', type: :request do
         it 'returns status code 200' do
           expect(response).to have_http_status(200)
         end
-  
+
         it 'updates the record' do
           expect(json['description']).to match(desc)
         end
@@ -93,11 +93,11 @@ RSpec.describe 'Specializations', type: :request do
 
       context 'when the item does not exist' do
         let(:id) { 0 }
-  
+
         it 'returns status code 404' do
           expect(response).to have_http_status(404)
         end
-  
+
         it 'returns a not found message' do
           expect(response.body).to match(/Couldn't find Specialization/)
         end

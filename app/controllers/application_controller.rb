@@ -13,4 +13,3 @@ class ApplicationController < ActionController::API
     @current_user = AuthorizeApiRequest.new(request.headers).call[:user]
   end
 end
-
