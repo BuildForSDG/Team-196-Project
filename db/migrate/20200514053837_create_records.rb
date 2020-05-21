@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class CreateRecords < ActiveRecord::Migration[6.0]
   def change
     create_table :records do |t|
-      t.integer :specialist_id
+      t.integer :specialist_id, null: true
       t.text :description
       t.string :diagnosis
       t.string :boolean
@@ -11,5 +13,3 @@ class CreateRecords < ActiveRecord::Migration[6.0]
     end
   end
 end
-
-

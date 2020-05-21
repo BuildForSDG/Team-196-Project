@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AuthenticateUser do
@@ -30,5 +32,3 @@ RSpec.describe AuthenticateUser do
     end
   end
 end
-
-

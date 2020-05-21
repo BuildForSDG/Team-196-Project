@@ -56,7 +56,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    api-pagination (4.8.2)
     bcrypt (3.1.13)
+    bcrypt (3.1.13-java)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     bootsnap (1.4.6-java)
@@ -196,6 +198,7 @@ GEM
     websocket-driver (0.7.1-java)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    will_paginate (3.3.0)
     zeitwerk (2.3.0)
 
 PLATFORMS
@@ -206,6 +209,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  api-pagination
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
@@ -222,6 +226,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  will_paginate
 
 RUBY VERSION
    ruby 2.6.3p62
