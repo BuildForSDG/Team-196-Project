@@ -7,6 +7,7 @@ RSpec.describe User, type: :model do
 
   # TODO: add user records model and uncomment this line
   it { should have_many(:records).dependent(:destroy) }
+  it { should have_many(:specialist_mappers) }
 
   it { should validate_presence_of(:first_name) }
   it { should validate_presence_of(:last_name) }
