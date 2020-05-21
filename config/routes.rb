@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :records
   end
 
-  resources :specializations, only: %i[show update destroy index create]
+  resources :specializations, only: %i[show update destroy index create] 
+  resources :specialist_mappers, only: %i[show update destroy index create]
 end
