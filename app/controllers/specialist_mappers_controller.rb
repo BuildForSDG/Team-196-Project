@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SpecialistMappersController < ApplicationController
   before_action :set_specialist_mapper, only: %i[show update destroy]
 
@@ -9,7 +11,7 @@ class SpecialistMappersController < ApplicationController
     json_response(@specialist_mapper)
   end
 
-  def create 
+  def create
     @specialist_mapper = SpecialistMapper.create!(specialist_mapper_params)
     json_response(@specialist_mapper, :created)
   end
