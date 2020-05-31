@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :records
   end
 
-  put '/users/:user_id/records/:id', to: 'records#update_records'
+  put 'claim_user_record', to: 'records#update_records'
 
   resources :specializations, only: %i[show update destroy index create]
   resources :specialist_mappers, only: %i[show update destroy index create]
