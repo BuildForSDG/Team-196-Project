@@ -27,10 +27,14 @@ class RecordsController < ApplicationController
     head :no_content
   end
 
+  def update_records
+    @record_update = Record.find(params[:id])
+    @record_update.update(schedule_date: params[:schedule_date])
+  end
   private
 
   def record_params
-    params.permit(:user_id, :specialist_id, :description, :diagnosis)
+    params.permit(:user_id, :specialist_id, :description, :diagnosis, :schedule_date)
   end
 
   def set_user
