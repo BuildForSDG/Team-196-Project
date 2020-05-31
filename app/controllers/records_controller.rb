@@ -29,7 +29,7 @@ class RecordsController < ApplicationController
 
   def update_records
     @record_update = Record.find(params[:id])
-    @record_update.update(schedule_date: params[:schedule_date])
+    @record_update.update(schedule_date: params[:schedule_date], specialist_id: params[:specialist_id])
   end
   private
 
