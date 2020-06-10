@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'swagger_helper'
 require 'rails_helper'
 
 RSpec.describe 'Users API', type: :request do
